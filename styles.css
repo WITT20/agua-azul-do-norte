@@ -124,6 +124,7 @@ h1, h2, h3 { font-family: "Manrope", "Segoe UI", sans-serif; }
 .page-hero-city { background: #22545b; }
 .page-hero-culture { background: #5c5631; }
 .page-hero-gallery { background: #285254; }
+.page-hero-climate { background: #5a5733; }
 .content-layout { display: grid; grid-template-columns: 235px minmax(0, 1fr); align-items: start; gap: 68px; }
 .page-aside { position: sticky; top: 24px; padding: 23px; border: 1px solid var(--line); border-radius: 7px; background: var(--white); }
 .aside-icon { display: grid; width: 43px; height: 43px; place-items: center; margin-bottom: 20px; border-radius: 14px; background: #e7f0e4; color: var(--green); font-size: 23px; }
@@ -162,6 +163,17 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .timeline-item p { margin: 0; font-size: 12px; }
 
 .map-panel { margin-top: 24px; padding: 22px; border: 1px solid var(--line); border-radius: 7px; background: #edf3e9; }
+.territory-map { margin: 0; padding: 14px; border-radius: 5px; background: white; text-align: center; }
+.territory-map img { display: block; width: min(100%, 480px); max-height: 450px; margin-inline: auto; object-fit: contain; }
+.territory-map figcaption { margin-top: 10px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.territory-map figcaption a { color: var(--green); }
+.interactive-map { height: 370px; margin-top: 16px; overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: #e5eee5; }
+.interactive-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+.map-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 13px; }
+.map-links a { display: flex; flex-direction: column; gap: 5px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 5px; background: white; text-decoration: none; transition: border-color .2s, transform .2s; }
+.map-links a:hover { transform: translateY(-2px); border-color: var(--leaf); }
+.map-links strong { color: var(--forest); font: 700 13px "Manrope", sans-serif; }
+.map-links span { color: var(--muted); font-size: 10px; line-height: 1.5; }
 .map-panel .eyebrow { margin-bottom: 17px; }
 .neighbor-map { position: relative; display: grid; min-height: 250px; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1.4fr 1fr; align-items: center; justify-items: center; gap: 7px; }
 .neighbor-map::before { position: absolute; z-index: 0; width: 126px; height: 126px; border-radius: 50%; background: #d9e9d6; content: ""; }
@@ -208,6 +220,23 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 .culture-banner h3 { position: relative; z-index: 1; margin: 0 0 8px; font-size: 31px; letter-spacing: -1.3px; line-height: 1.05; }
 .culture-banner p:last-child { position: relative; z-index: 1; max-width: 320px; margin: 0; color: #f2f0df; font-size: 11px; }
 .culture-sun { position: absolute; top: 14px; right: 38px; color: #ffda76; font-size: 120px; opacity: .8; }
+.climate-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.climate-stats article { display: flex; min-height: 150px; flex-direction: column; justify-content: center; padding: 20px; border-radius: 7px; background: var(--forest); }
+.climate-stats article:nth-child(2) { background: #286176; }
+.climate-stats span { margin-bottom: 9px; color: #d5e3d9; font-size: 10px; }
+.climate-stats strong { margin-bottom: 6px; color: var(--yellow); font: 800 26px "Manrope", sans-serif; letter-spacing: -1px; }
+.climate-stats small { color: #d5e3d9; font-size: 10px; line-height: 1.5; }
+.season-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 19px; }
+.season-card { padding: 21px; border: 1px solid var(--line); border-radius: 7px; background: white; }
+.season-card.wet { border-top: 4px solid var(--blue); }
+.season-card.dry { border-top: 4px solid var(--yellow); }
+.season-card .eyebrow { margin-bottom: 8px; }
+.season-card h3 { margin: 0 0 8px; color: var(--forest); font-size: 18px; }
+.season-card > p:not(.eyebrow) { min-height: 83px; margin-bottom: 18px; font-size: 11px; }
+.month-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.month-strip span { padding: 7px 2px; border-radius: 3px; background: #dcebed; color: #26596b; font-size: 9px; text-align: center; }
+.dry .month-strip span { background: #fbf0cf; color: #735b20; }
+.climate-source { margin-top: 18px; }
 .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
 .food-grid article { min-height: 140px; padding: 18px; border: 1px solid var(--line); border-radius: 6px; background: white; }
 .food-grid article > span { color: #aa831e; font-size: 10px; font-weight: 700; }
@@ -271,6 +300,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   .page-aside > p { flex: 1 1 calc(100% - 60px); }
   .page-hero { padding-block: 54px 58px; }
   .community-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .map-links, .season-grid, .climate-stats { grid-template-columns: 1fr 1fr; }
   .gallery-grid .gallery-card:last-child { grid-column: 1 / -1; }
   .site-footer { grid-template-columns: 1fr 1fr; padding-inline: 24px; }
   .site-footer > p { display: none; }
@@ -291,6 +321,8 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   .name-cards { grid-template-columns: 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 6px; }
   .distance-grid { grid-template-columns: 1fr 1fr; }
+  .map-links, .season-grid, .climate-stats { grid-template-columns: 1fr; }
+  .interactive-map { height: 300px; }
   .stat-row { grid-template-columns: 1fr; }
   .stat-card { display: flex; align-items: center; gap: 16px; }
   .stat-card strong { min-width: 108px; margin: 0; font-size: 19px; }
